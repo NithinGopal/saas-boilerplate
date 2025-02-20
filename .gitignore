@@ -40,3 +40,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 EOL
+
+.turbo/
