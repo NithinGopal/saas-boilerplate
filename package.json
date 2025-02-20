@@ -1,0 +1,32 @@
+{
+  "name": "saas-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.4.1",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "eslint": "^8.57.0",
+    "prettier": "^3.5.1",
+    "turbo": "^2.4.2",
+    "typescript": "^5.2.2"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "electron"
+    ],
+    "onlyBuiltDependencies": [
+      "electron"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+# Create .gitignore
+cat > .gitignore << EOL
+# dependencies
+node_modules
+.pnpm-store
+
+# testing
+coverage
+
+# build
+dist
+dist-electron
+release
+out
+
+# misc
+.DS_Store
+.env
+.env.*
+*.pem
+.eslintcache
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# database
+*.db
+*.db-journal
+
+# IDEs and editors
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+EOL
