@@ -11,23 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '22'
-          cache: 'pnpm'  # Cache pnpm dependencies
+          node-version: '18'
 
       - name: Install pnpm
-        run: npm install -g pnpm  # ✅ Explicitly install pnpm
-
-      - name: Verify pnpm installation
-        run: pnpm --version  # ✅ Check if pnpm is installed
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build
         run: pnpm build
