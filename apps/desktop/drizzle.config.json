@@ -1,9 +1,8 @@
 {
-    "schema": "./src/shared/db/schema/index.ts",
-    "out": "./src/shared/db/migrations",
-    "dialect": "sqlite",
-    "dbCredentials": {
-      "url": "file:./sqlite.db"
-    }
+  "schema": "./src/shared/db/schema/index.ts",
+  "out": "./src/shared/db/migrations",
+  "dialect": "sqlite",
+  "dbCredentials": {
+    "url": "file:./sqlite.db"
   }
-  
+}

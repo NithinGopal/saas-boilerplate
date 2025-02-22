@@ -1,28 +1,25 @@
 {
-  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
-  "appId": "com.saas.desktop",
-  "asar": true,
-  "directories": {
-    "output": "release/${version}"
+  $schema: 'https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json',
+  appId: 'com.saas.desktop',
+  asar: true,
+  directories: {
+    output: 'release/${version}',
   },
-  "files": [
-    "dist-electron",
-    "dist"
-  ],
-  "win": {
-    "target": [
+  files: ['dist-electron', 'dist'],
+  win: {
+    target: [
       {
-        "target": "nsis",
-        "arch": ["x64"]
-      }
+        target: 'nsis',
+        arch: ['x64'],
+      },
     ],
-    "artifactName": "${productName}_${version}.${ext}",
-    "signAndEditExecutable": false  // Add this line to skip signing
+    artifactName: '${productName}_${version}.${ext}',
+    signAndEditExecutable: false, // Add this line to skip signing
   },
-  "nsis": {
-    "oneClick": false,
-    "perMachine": false,
-    "allowToChangeInstallationDirectory": true,
-    "deleteAppDataOnUninstall": false
-  }
+  nsis: {
+    oneClick: false,
+    perMachine: false,
+    allowToChangeInstallationDirectory: true,
+    deleteAppDataOnUninstall: false,
+  },
 }
