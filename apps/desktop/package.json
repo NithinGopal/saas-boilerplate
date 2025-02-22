@@ -14,18 +14,25 @@
     "build": "tsc && vite build",
     "build:electron": "electron-builder",
     "preview": "vite preview",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "node -r esbuild-register src/shared/db/migrate.ts"
   },
   "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "drizzle-orm": "^0.39.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react": "^4.2.1",
+    "drizzle-kit": "^0.30.4",
     "electron": "^34.2.0",
     "electron-builder": "^24.9.1",
     "eslint": "^8.57.0",

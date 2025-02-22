@@ -26,7 +26,10 @@
       "electron"
     ],
     "onlyBuiltDependencies": [
-      "electron"
+      "better-sqlite3",
+      "electron",
+      "esbuild",
+      "sqlite3"
     ]
   }
 }
