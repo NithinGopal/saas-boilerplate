@@ -11,12 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
+          cache: 'pnpm'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -24,10 +25,22 @@ jobs:
           version: 8
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: Build (General)
         run: pnpm build
+
+      - name: Build Electron App
+        run: pnpm build --filter=desktop
+
+      - name: Package Electron App
+        run: pnpm exec electron-builder --publish=never
+
+      - name: Upload Electron Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-build
+          path: apps/desktop/dist-electron/**
 
       - name: Lint
         run: pnpm lint
