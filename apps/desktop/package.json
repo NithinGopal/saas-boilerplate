@@ -15,6 +15,7 @@
     "build:electron": "electron-builder",
     "preview": "vite preview",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "start": "electron .",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node -r esbuild-register src/shared/db/migrate.ts"
   },
