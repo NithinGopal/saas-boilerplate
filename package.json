@@ -17,11 +17,9 @@
     "prepare": "husky && husky install"
   },
   "lint-staged": {
-  "**/*.{js,ts,tsx}": [
-    "eslint --fix",
-    "prettier --write"
-  ]
-},
+    "*.{js,ts,tsx}": "pnpm eslint --fix",
+    "*.{json,md,yml}": "pnpm prettier --write"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
