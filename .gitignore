@@ -17,6 +17,7 @@ out
 .DS_Store
 .env
 .env.*
+!.env.example
 *.pem
 .eslintcache
 
