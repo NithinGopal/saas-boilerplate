@@ -20,11 +20,17 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
+      - name: Enable Corepack
+        run: corepack enable # Ensures pnpm is recognized
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
           run_install: true # Installs dependencies automatically
+
+      - name: Verify pnpm installation
+        run: pnpm --version # Debugging step
 
       - name: Build
         run: pnpm build
@@ -46,11 +52,17 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
+      - name: Enable Corepack
+        run: corepack enable # Ensures pnpm is recognized
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
           run_install: true # Installs dependencies automatically
+
+      - name: Verify pnpm installation
+        run: pnpm --version # Debugging step
 
       - name: Run Tests
         run: pnpm jest --passWithNoTests --ci
