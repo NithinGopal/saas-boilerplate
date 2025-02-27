@@ -50,10 +50,6 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          run_install: false # Prevents automatic `pnpm install` here
-
-      - name: Ensure pnpm is available
-        run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
