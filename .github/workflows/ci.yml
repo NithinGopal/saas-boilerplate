@@ -24,9 +24,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          run_install: true # Installs dependencies automatically
 
       - name: Build
         run: pnpm build
@@ -49,10 +47,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true # Installs dependencies automatically
 
       - name: Run Tests
         run: pnpm jest --passWithNoTests --ci
