@@ -52,11 +52,14 @@ jobs:
           version: 8
           run_install: false # Prevents automatic `pnpm install` here
 
+      - name: Ensure pnpm is available
+        run: corepack enable && corepack prepare pnpm@latest --activate
+
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Run Tests
-        run: pnpm jest --passWithNoTests --ci
+        run: pnpm exec jest --passWithNoTests --ci
 
       - name: Upload Test Results (if any)
         uses: actions/upload-artifact@v4
