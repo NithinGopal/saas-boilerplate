@@ -11,23 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'pnpm'
+          node-version: '18'
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          run_install: false # Prevents automatic install
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Build
         run: pnpm build
@@ -53,7 +50,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          run_install: false # Prevents automatic install
+          run_install: false # Prevents automatic `pnpm install` here
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
