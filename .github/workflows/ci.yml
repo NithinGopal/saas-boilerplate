@@ -44,7 +44,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'pnpm'
+
+      - name: Clear pnpm cache
+        run: rm -rf ~/.pnpm-store
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
