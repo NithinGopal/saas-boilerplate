@@ -46,10 +46,13 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false # Prevents automatic `pnpm install` here
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run Tests
         run: pnpm jest --passWithNoTests --ci
