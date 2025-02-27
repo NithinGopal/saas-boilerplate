@@ -20,17 +20,15 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - name: Enable Corepack
-        run: corepack enable # Ensures pnpm is recognized
-
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: true # Installs dependencies automatically
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.15.4 --activate
+          echo "PNPM path: $(which pnpm)"
+          pnpm --version
 
-      - name: Verify pnpm installation
-        run: pnpm --version # Debugging step
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm build
@@ -52,17 +50,15 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - name: Enable Corepack
-        run: corepack enable # Ensures pnpm is recognized
-
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: true # Installs dependencies automatically
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.15.4 --activate
+          echo "PNPM path: $(which pnpm)"
+          pnpm --version
 
-      - name: Verify pnpm installation
-        run: pnpm --version # Debugging step
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Run Tests
         run: pnpm jest --passWithNoTests --ci
