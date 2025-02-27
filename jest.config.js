@@ -1,5 +1,5 @@
 module.exports = {
-  roots: ["<rootDir>/packages"],
+  roots: ["<rootDir>/apps"], // Corrected roots
   testEnvironment: "node",
   preset: "ts-jest",
   collectCoverageFrom: ["packages/**/{src,lib}/**/*.{js,ts,tsx}"],
