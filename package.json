@@ -11,17 +11,22 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "test": "echo 'No tests defined' && exit 0",
     "start": "turbo run start",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "prepare": "husky && husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "pnpm@10.5.2",
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
+    "husky": "^8.0.0",
     "prettier": "^3.5.1",
     "turbo": "^2.4.2",
     "typescript": "^5.5.4"
