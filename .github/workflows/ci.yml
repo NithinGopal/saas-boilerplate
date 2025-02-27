@@ -21,9 +21,13 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+
+      - name: Verify pnpm installation
         run: |
-          corepack enable
-          corepack prepare pnpm@8.15.4 --activate
           echo "PNPM path: $(which pnpm)"
           pnpm --version
 
@@ -51,9 +55,13 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+
+      - name: Verify pnpm installation
         run: |
-          corepack enable
-          corepack prepare pnpm@8.15.4 --activate
           echo "PNPM path: $(which pnpm)"
           pnpm --version
 
