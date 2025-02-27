@@ -1,2 +1,5 @@
 #!/bin/sh
-npx branch-name-lint
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ "$branch" != "dev" && "$branch" != "main" ]]; then
+  npx branch-name-lint
+fi

@@ -1,0 +1,4 @@
+{
+  "pattern": "^(feature|fix|chore|docs|refactor|test|release)\\/[a-z0-9-]+$",
+  "errorMessage": "Branch name must follow the pattern: <type>/<description> (e.g., feature/add-user-profile)"
+}
