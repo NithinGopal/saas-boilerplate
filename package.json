@@ -16,6 +16,12 @@
     "lint": "turbo run lint",
     "prepare": "husky && husky install"
   },
+  "lint-staged": {
+  "**/*.{js,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -26,7 +32,8 @@
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.5.1",
     "turbo": "^2.4.2",
     "typescript": "^5.5.4"
