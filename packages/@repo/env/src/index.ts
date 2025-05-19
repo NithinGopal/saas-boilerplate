@@ -1,14 +1,11 @@
 import { z } from "zod";
 
-// Define the schema for environment variables
 const envSchema = z.object({
-  // Add your environment variables here
+  NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
+  // Add other environment variables here as needed
   // Example:
-  // DATABASE_URL: z.string().url(),
-  // API_KEY: z.string(),
+  // API_URL: z.string().url(),
+  // DATABASE_URL: z.string(),
 });
 
-// Parse and validate the environment variables
-const env = envSchema.parse(process.env);
-
-export { env };
+export const env = envSchema.parse(process.env);

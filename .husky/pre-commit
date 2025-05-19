@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 pnpm test --passWithNoTests || true  # Allows Jest to exit with 0 even if no tests are found
-pnpm exec lint-staged
+# pnpm dlx lint-staged

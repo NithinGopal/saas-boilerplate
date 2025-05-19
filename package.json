@@ -40,7 +40,8 @@
     "prettier": "^3.5.1",
     "ts-jest": "^29.2.6",
     "turbo": "^2.4.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "@repo/eslint-config": "workspace:*"
   },
   "pnpm": {
     "ignoredBuiltDependencies": [
