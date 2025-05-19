@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.0.12",
-    "@clerk/react": "^5.0.12",
+    "@clerk/clerk-react": "^5.0.12",
     "@clerk/types": "^4.7.1",
     "react": "^18.2.0"
   }
