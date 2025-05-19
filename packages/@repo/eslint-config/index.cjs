@@ -12,7 +12,7 @@ const config = {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json", "./apps/*/tsconfig.json", "./packages/*/tsconfig.json"],
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: process.cwd(),
   },
   settings: {
     react: {

@@ -2,7 +2,7 @@
   "name": "@repo/eslint-config",
   "version": "0.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "index.cjs",
   "license": "MIT",
   "dependencies": {
     "eslint-config-next": "^14.0.4",
