@@ -1,0 +1,22 @@
+{
+  "name": "@repo/auth",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "generate:keys": "clerk generate keys"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.0.12",
+    "@clerk/clerk-react": "^5.0.12",
+    "@clerk/types": "^4.7.1",
+    "react": "^18.2.0"
+  }
+}
